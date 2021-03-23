@@ -1,0 +1,54 @@
+@import url("https://fonts.googleapis.com/css?family=Lora:400,400i,700");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700");
+.container {
+	font-family: Lora, sans-serif;
+}
+.panel {
+	margin: auto;
+	padding: 10vh 20vw;
+	width: 80vw;
+}
+.name {
+	font-size: 4em;
+	margin-bottom: 0.4em;
+	opacity: 0;
+	transition: opacity 1s, color .5s;
+}
+.talk-about {
+	font-size: 2.75em;
+	color: gray;
+	opacity: 0;
+	transition: opacity 1s, color .5s;
+}
+.topic {
+	font-size: 4em;
+	margin-top: 0.4em;
+	opacity: 0;
+	transition: opacity 1s, color .5s;
+}
+.btn {
+	opacity: 0;
+	transition: opacity .5s;
+	margin-top: 40px;
+	font-size: 2em;
+	padding: 20px 40px;
+	border-radius: 8px;
+	background: #9575CD;
+	color: #EDE7F6;
+	border: none;
+	cursor: pointer;
+}
+.restart {
+	margin-top: 12px;
+}
+.timer {
+	margin-top: 10px;
+	font-size: 7.5em;
+	line-height: 1;
+	font-family: "Open Sans", sans-serif;
+	color: red;
+	font-weight: bold;
+}
+.finished {
+	color: #d8d8d8;
+}
