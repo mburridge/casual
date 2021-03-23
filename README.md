@@ -1,6 +1,8 @@
 # Casual
 
-A Pen created on CodePen.io. Original URL: [https://codepen.io/mburridge/pen/jOrPmPB](https://codepen.io/mburridge/pen/jOrPmPB).
+A simple app to play a turn-based game during Frontity casual sessions.
+
+Original version: [https://codepen.io/mburridge/pen/jOrPmPB](https://codepen.io/mburridge/pen/jOrPmPB).
 
 ## TO-DO
 

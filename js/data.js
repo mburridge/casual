@@ -6,7 +6,8 @@ export const people = [
 	'Michael',
 	'Michal',
 	'Pablo',
-	'Reyes'
+	'Reyes',
+	'Cristian'
 ]
 
 export const topics = [
