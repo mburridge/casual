@@ -1,3 +1,10 @@
+/**
+ * Defines the Person class
+ *
+ * The Person class selects a random person to speak next
+ * who isn't in the recents array.
+ */
+
 export default class Person {
 
 	constructor(people) {
@@ -6,6 +13,9 @@ export default class Person {
 		this.interval = 3
 	}
 
+	/**
+	 * @returns  str    a random person that isn't in the recents array
+	 **/
 	getNewPerson = () => {
 
 		// get a new random array index

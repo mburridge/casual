@@ -15,7 +15,9 @@ const start = document.querySelector('#start')
 const timer = document.querySelector('#timer')
 const restart = document.querySelector('#restart')
 
-// const recents = []
+/*********************************************
+ * Variables
+ *********************************************/
 
 let talkTime = 60
 let seconds = talkTime
@@ -34,12 +36,9 @@ function timeout(ms) {
 	return new Promise(resolve => setTimeout(resolve, ms))
 }
 
-
-
 /**
  * @returns  int    a random number for an object that hasn't yet been used
  **/
-
 const runClock = async () => {
 
 	if (seconds > 0) {
@@ -120,4 +119,5 @@ start.addEventListener('click', () => {
 /*********************************************
  * Action!
  *********************************************/
+// uncomment this line to run the program
 // generate()

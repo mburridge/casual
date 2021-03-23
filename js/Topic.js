@@ -1,3 +1,9 @@
+/**
+ * Defines the Topic class
+ *
+ * The Topic class selects a random topic and returns it
+ */
+
 export default class Topic {
 
 	constructor(topics) {
@@ -8,6 +14,9 @@ export default class Topic {
 		this.topicCount = 0
 	}
 
+	/**
+	 * @returns  str    a random topic that hasn't already been used
+	 **/
 	getNewTopic = () => {
 
 		if (this.topicCount == this.topics.length - 1) return 0 // we've run out of topics
