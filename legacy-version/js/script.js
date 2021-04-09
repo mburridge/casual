@@ -4,6 +4,7 @@ import { spinner } from './svg.js'
 import Person from './Person.js'
 import Topic from './Topic.js'
 
+
 /*********************************************
  * DOM Elements
  *********************************************/
@@ -19,7 +20,7 @@ const restart = document.querySelector('#restart')
  * Variables
  *********************************************/
 
-let talkTime = 60
+let talkTime = 6
 let seconds = talkTime
 
 const personContest = new Person(people)
@@ -120,4 +121,4 @@ start.addEventListener('click', () => {
  * Action!
  *********************************************/
 // uncomment this line to run the program
-// generate()
+generate()
