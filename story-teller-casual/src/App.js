@@ -1,23 +1,34 @@
 import './App.css';
+import { React, useEffect } from 'react';
+import { styled } from 'goober';
+import WebFont from 'webfontloader';
 
 function App() {
+
+  useEffect(() => {
+    WebFont.load({
+      google: {
+        families: ['Open Sans', 'Lora']
+      }
+    });
+  }, []);
+
   return (
     <div className="App">
       <header className="App-header">
-        <p>
-          Does this change for you?
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <Btn>
+          Start the story...
+        </Btn>
       </header>
     </div>
   );
 }
 
 export default App;
+
+const Btn = styled("button")`
+  border-radius: 14px;
+  padding: 20px;
+  border: none;
+  font-family: Lora;
+`;
