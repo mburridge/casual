@@ -31,4 +31,5 @@ const Btn = styled("button")`
   padding: 20px;
   border: none;
   font-family: Lora;
+  font-size: 1rem;
 `;
