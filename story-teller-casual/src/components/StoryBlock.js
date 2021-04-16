@@ -7,7 +7,11 @@ const StoryBlock = () => {
 
 	const [waitingToStart, setWaitingToStart] = useState(false)
 	const [userStartSpeaking, setUserStartSpeaking] = useState(false)
-	const [isFirstTime, setIsFirstTime] = useState(true)
+	// const [isFirstTime, setIsFirstTime] = useState(true)
+
+	const launchUserStartSpeaking = () => {
+		setUserStartSpeaking(true)
+	}
 
 	const startStoryClick = e => {
 		setWaitingToStart(true)
@@ -22,7 +26,7 @@ const StoryBlock = () => {
 			<Btn onClick={startStoryClick} >Start the story</Btn>
 			<p>this is StoryBlock</p>
 
-			{ waitingToStart && <CountDown seconds={15} />}
+			{ waitingToStart && <CountDown seconds={15} callbackWhenFinish={launchUserStartSpeaking} />}
 			{ userStartSpeaking && <CountDown seconds={60} />}
 
 		</>

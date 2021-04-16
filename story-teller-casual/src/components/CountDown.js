@@ -6,25 +6,28 @@ import { useState, useEffect } from "react"
 function timeout(ms) {
 	return new Promise(resolve => setTimeout(resolve, ms))
 }
+const logEnd = () => { console.log('end!') }
 
-const CountDown = ({ seconds, callbackWhenFinish }) => {
+const CountDown = ({ seconds, callbackWhenFinish = logEnd }) => {
 
-	const [counter, setCounter] = useState(null)
-
-	useEffect(async () => {
+	const [counter, setCounter] = useState(null);
+  
+	useEffect(() => {
 		if (counter === null) setCounter(seconds);
-		else if (counter === 0) callbackWhenFinish();
+		else if (counter === 0) {
+			callbackWhenFinish();
+		}
 		else {
-			await timeout(1000)
-			setCounter(counter - 1)
+			setTimeout(() => {
+				setCounter(counter - 1);
+			}, 1000);
 		}
 
 	}, [seconds, counter]);
 
-
 	return (
 		<>
-			<p>{seconds}</p>
+			<p>{counter}</p>
 		</>
 	)
 }
