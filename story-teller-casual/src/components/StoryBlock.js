@@ -1,20 +1,33 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { styled } from 'goober';
+import { people, topics } from '../helpers/data.js'
+import Person from '../helpers/Person.js'
+import Topic from '../helpers/Topic.js'
 
 import CountDown from './CountDown'
 
+const personContest = new Person(people)
+const topicContest = new Topic(topics)
+
 const StoryBlock = () => {
 
-	const [waitingToStart, setWaitingToStart] = useState(false)
-	const [userStartSpeaking, setUserStartSpeaking] = useState(false)
+	const [timeNextSpeaker, setTimeNextSpeaker] = useState(0)
+	const [timeStartSpeaking, setTimeStartSpeaking] = useState(0)
+	const [personSpeaking, setPersonSpeaking] = useState("")
+	const [topicTalk, setTopicTalk] = useState("")
 	// const [isFirstTime, setIsFirstTime] = useState(true)
 
 	const launchUserStartSpeaking = () => {
-		setUserStartSpeaking(true)
+		setTimeNextSpeaker(0)
+		setTimeStartSpeaking(10)
 	}
-
+	
 	const startStoryClick = e => {
-		setWaitingToStart(true)
+		setPersonSpeaking(personContest.getNewPerson())
+		setTopicTalk(topicContest.getNewTopic())
+		setTimeNextSpeaker(2)
+		setTimeStartSpeaking(0)
+		console.log({timeNextSpeaker, timeStartSpeaking, personSpeaking, topicTalk})
 	}
 	/*
 		State:
@@ -24,10 +37,11 @@ const StoryBlock = () => {
 	return (
 		<>
 			<Btn onClick={startStoryClick} >Start the story</Btn>
-			<p>this is StoryBlock</p>
-
-			{ waitingToStart && <CountDown seconds={15} callbackWhenFinish={launchUserStartSpeaking} />}
-			{ userStartSpeaking && <CountDown seconds={60} />}
+			
+			<p>{(!!timeNextSpeaker || !!timeStartSpeaking) && personSpeaking}</p>
+			<p>{(!!timeNextSpeaker || !!timeStartSpeaking) && topicTalk}</p>
+			{ !!timeNextSpeaker && <CountDown seconds={timeNextSpeaker} callbackWhenFinish={launchUserStartSpeaking} />}
+			{ !!timeStartSpeaking && <CountDown seconds={timeStartSpeaking} callbackWhenFinish={startStoryClick} />}
 
 		</>
 	)
